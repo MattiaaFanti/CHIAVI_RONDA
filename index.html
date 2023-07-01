@@ -64,7 +64,7 @@
   </style>
 </head>
 <body>
-<h1 id="curiosity">Ciao Bastardo, ecco le ultime news . . .</h1>
+<h1 id="curiosity"></h1>
 <input type="text" id="searchInput" placeholder="Porgo il mio inchino a Mattia...">
 <ul id="resultsList">
  
@@ -86,14 +86,16 @@ var curiosities = [
 var curiosityIndex = 0;
 var curiosityElement = document.getElementById('curiosity');
 
+// Mostra la prima curiosità all'avvio
+curiosityElement.textContent = curiosities[curiosityIndex];
+
 // Funzione per cambiare la curiosità ogni 10 secondi
 function changeCuriosity() {
   curiosityElement.textContent = curiosities[curiosityIndex];
   curiosityIndex = (curiosityIndex + 1) % curiosities.length;
 }
 
-setInterval(changeCuriosity, 5000); // Cambia curiosità ogni 10 secondi
-
+setInterval(changeCuriosity, 6000); // Cambia curiosità ogni 10 secondi
 
 function filterResults() {
   var searchKeyword = searchInput.value.toLowerCase();
