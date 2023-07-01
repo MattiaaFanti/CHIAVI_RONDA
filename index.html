@@ -64,7 +64,7 @@
   </style>
 </head>
 <body>
-<h1>Curiosità del giorno: "Attilio non fa mai più di 40 km/h durante la ronda"</h1>
+<h1 id="curiosity">Curiosità del giorno</h1>
 <input type="text" id="searchInput" placeholder="Porgo il mio inchino a Mattia...">
 <ul id="resultsList">
  
@@ -72,6 +72,24 @@
 <script>
 var searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('input', filterResults);
+
+// Lista delle curiosità
+var curiosities = [
+  "News: Attilio non fa più di 40 km/h durante la ronda",
+  "News: I rondisti stanno iniziando a punzonare gli stessi punzioni",
+  "Ultim'ora: Gianmarco Gatti investito da un gatto in stato di ebrezza."
+];
+
+var curiosityIndex = 0;
+var curiosityElement = document.getElementById('curiosity');
+
+// Funzione per cambiare la curiosità ogni 10 secondi
+function changeCuriosity() {
+  curiosityElement.textContent = curiosities[curiosityIndex];
+  curiosityIndex = (curiosityIndex + 1) % curiosities.length;
+}
+
+setInterval(changeCuriosity, 5000); // Cambia curiosità ogni 5 secondi
 
 function filterResults() {
   var searchKeyword = searchInput.value.toLowerCase();
