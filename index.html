@@ -3,7 +3,7 @@
 <head>
 <title>Rondisti falliti</title>
 <style>
-    /* Stili CSS per la pagina */
+    /* Stili CSS di base */
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
@@ -23,10 +23,21 @@
     li {
       margin-bottom: 10px;
     }
+
+    /* Stili specifici per dispositivi mobili */
+    @media only screen and (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      input[type="text"] {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
-<h1>Curiosità del giorno: "Attilio non fa mai più di 40 km/h durante la ronda1"</h1>
+<h1>Curiosità del giorno: "Attilio non fa mai più di 40 km/h durante la ronda"</h1>
 <input type="text" id="searchInput" placeholder="Porgo il mio inchino a Mattia...">
 <ul id="resultsList">
  
