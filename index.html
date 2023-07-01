@@ -62,6 +62,31 @@
 <ul id="resultsList">
  
 </ul>
+    <script>
+var searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', filterResults);
+
+function filterResults() {
+  var searchKeyword = searchInput.value.toLowerCase();
+  
+  var resultsList = document.getElementById('resultsList');
+  resultsList.innerHTML = ''; // Svuota la lista dei risultati
+  
+  // Itera sulla lista di righe di testo
+  for (var i = 0; i < textData.length; i++) {
+    var text = textData[i].toLowerCase();
+    
+    // Se la riga di testo contiene la parola cercata, aggiungi il risultato alla lista
+    if (text.includes(searchKeyword)) {
+      var li = document.createElement('li');
+      li.textContent = textData[i];
+      resultsList.appendChild(li);
+    }
+  }
+}
+    
+    // Lista di righe di testo
+    var textData = [
         "-CA01-SARDEGNA IT, VIA DEI GIORNALISTI 6 - BADGE APRIPORTA - N°3 CHIAVI MECCANCHE",
         "-CA02-ENAS STABILI VIALE ELMAS 116 - N°2 CHIAVI MECCANICHE",
         "-CAO3-INPS SEDE VIA GRANDI 6 - N°4 CHIAVI MECCANICHE",
