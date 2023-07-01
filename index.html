@@ -89,13 +89,13 @@ var curiosityElement = document.getElementById('curiosity');
 // Mostra la prima curiosità all'avvio
 curiosityElement.textContent = curiosities[curiosityIndex];
 
-// Funzione per cambiare la curiosità ogni 10 secondi
+// Funzione per cambiare la curiosità ogni 5 secondi
 function changeCuriosity() {
-  curiosityElement.textContent = curiosities[curiosityIndex];
   curiosityIndex = (curiosityIndex + 1) % curiosities.length;
+  curiosityElement.textContent = curiosities[curiosityIndex];
 }
 
-setInterval(changeCuriosity, 6000); // Cambia curiosità ogni 10 secondi
+setInterval(changeCuriosity, 5000); // Cambia curiosità ogni 5 secondi
 
 function filterResults() {
   var searchKeyword = searchInput.value.toLowerCase();
