@@ -74,7 +74,7 @@ var searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('input', filterResults);
 // Lista delle curiosità
 var curiosities = [
-  "News: Traffico in tutte le reti stradali Sarde - Il rondista Malune la causa. 
+  "News: Traffico in tutte le reti stradali Sarde - Il rondista Malune la causa.",
   "News: I rondisti stanno iniziando a punzonare gli stessi punzioni",
   "Ultim'ora: La gpg Gianmarco Gatti investito da un gatto in stato di ebrezza."
 ];
@@ -88,7 +88,8 @@ function changeCuriosity() {
   curiosityIndex = (curiosityIndex + 1) % curiosities.length;
 }
 
-setInterval(changeCuriosity, 5000); // Cambia curiosità ogni 5 secondi
+setInterval(changeCuriosity, 10000); // Cambia curiosità ogni 10 secondi
+
 
 function filterResults() {
   var searchKeyword = searchInput.value.toLowerCase();
