@@ -8,13 +8,18 @@
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      background-color: #f2f2f2;
+      background-image: url('URL_IMMAGINE');
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px);
     }
     
     h1 {
       font-size: 24px;
       text-align: center;
       margin-bottom: 20px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     input[type="text"] {
@@ -72,7 +77,6 @@
 <script>
 var searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('input', filterResults);
-
 // Lista delle curiosità
 var curiosities = [
   "News: Attilio non fa più di 40 km/h durante la ronda",
